@@ -66,7 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scenes\FollowCam.cs" />
     <Compile Include="Assets\Scenes\Player.cs" />
-    <Compile Include="Assets\Scenes\PlayerMove.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/82106/Desktop/2021-2/게임엔진실습/Unity/HW1_C093182_LSJ/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

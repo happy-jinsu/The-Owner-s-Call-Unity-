@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,8 +23,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))  //왼쪽
         {
-            if (IsJumping==false)
+            if (IsJumping==false)       //점프 중에는 이동 불가
             {
+                // rigid.AddForce(Vector3.left * 0.5f, ForceMode.Impulse);  // 포물선을 그리는 점프 가능
                 this.transform.Translate(-0.1f, 0.0f, 0.0f);
             }
 
@@ -35,8 +37,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))  //오른쪽
         {
-            if (IsJumping == false)
+            if (IsJumping == false)     //점프 중에는 이동 불가
             {
+                
                 this.transform.Translate(0.1f, 0.0f, 0.0f);
             }
 
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour
                 return;
             }
         }
+        
     }
 
     void Jump()
@@ -52,7 +56,7 @@ public class Player : MonoBehaviour
    
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(!IsJumping)
+            if(!IsJumping)     //땅에 닿았을 때만 다시 점프 가능
             {
                 IsJumping = true;
                 rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
@@ -65,11 +69,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)       // 땅에 닿지 않으면 점프 불가
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             IsJumping = false;
         }
+
+        if (collision.gameObject.CompareTag("Obstacles"))
+        {
+            SceneManager.LoadScene("Main");
+        }
+
     }
 }
