@@ -23,7 +23,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))  //왼쪽
         {
-            if (IsJumping==false)       //점프 중에는 이동 불가
+            this.transform.Translate(-0.1f, 0.0f, 0.0f);
+            /*if (IsJumping==false)       //점프 중에는 이동 불가
             {
                 // rigid.AddForce(Vector3.left * 0.5f, ForceMode.Impulse);  // 포물선을 그리는 점프 가능
                 this.transform.Translate(-0.1f, 0.0f, 0.0f);
@@ -32,12 +33,13 @@ public class Player : MonoBehaviour
             else
             {
                 return;
-            }
+            }*/
         }
 
         if (Input.GetKey(KeyCode.RightArrow))  //오른쪽
         {
-            if (IsJumping == false)     //점프 중에는 이동 불가
+            this.transform.Translate(0.1f, 0.0f, 0.0f);
+            /*if (IsJumping == false)     //점프 중에는 이동 불가
             {
                 
                 this.transform.Translate(0.1f, 0.0f, 0.0f);
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
             {
                 return;
             }
+            */
         }
         
     }
