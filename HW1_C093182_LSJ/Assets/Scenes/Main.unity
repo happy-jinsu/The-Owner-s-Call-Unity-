@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 1436570200}
   m_Layer: 0
   m_Name: ObstaclesMovearound
-  m_TagString: Obstacles
+  m_TagString: ObstaclesMoveChange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,6 +641,7 @@ MonoBehaviour:
   rigid: {fileID: 1894815274}
   JumpPower: 30
   IsJumping: 0
+  time: 0
 --- !u!1 &1934043574
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +658,7 @@ GameObject:
   - component: {fileID: 1934043579}
   m_Layer: 0
   m_Name: ObstaclesJump
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

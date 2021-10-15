@@ -6,52 +6,60 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public Rigidbody rigid;
-
     public int JumpPower;
     public bool IsJumping;
+    int HP;
+    public float time;
+    bool touch;
 
     // 처음 한번만 실행 되는 함수
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
         IsJumping = false;
+        HP = 3;
+        touch = false;
+        time = 0;
     }
     // 매 frame마다 실행 되는 함수
     void Update()
     {
         Jump();
 
-        if (Input.GetKey(KeyCode.LeftArrow))  //왼쪽
+        if (touch == true)
         {
-            this.transform.Translate(-0.1f, 0.0f, 0.0f);
-            /*if (IsJumping==false)       //점프 중에는 이동 불가
-            {
-                // rigid.AddForce(Vector3.left * 0.5f, ForceMode.Impulse);  // 포물선을 그리는 점프 가능
-                this.transform.Translate(-0.1f, 0.0f, 0.0f);
-            }
+            time += Time.deltaTime;
 
-            else
-            {
-                return;
-            }*/
-        }
 
-        if (Input.GetKey(KeyCode.RightArrow))  //오른쪽
-        {
-            this.transform.Translate(0.1f, 0.0f, 0.0f);
-            /*if (IsJumping == false)     //점프 중에는 이동 불가
+            if (Input.GetKey(KeyCode.LeftArrow))  //왼쪽
             {
-                
                 this.transform.Translate(0.1f, 0.0f, 0.0f);
             }
 
-            else
+            if (Input.GetKey(KeyCode.RightArrow))  //오른쪽
             {
-                return;
+                this.transform.Translate(-0.1f, 0.0f, 0.0f);
             }
-            */
+
+            if (time > 3f)
+            {
+                touch = false;
+            }
         }
-        
+
+        else   // 원래
+        {
+            if (Input.GetKey(KeyCode.LeftArrow))  //왼쪽
+            {
+                this.transform.Translate(-0.1f, 0.0f, 0.0f);
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))  //오른쪽
+            {
+                this.transform.Translate(0.1f, 0.0f, 0.0f);
+            }
+        }
+
     }
 
     void Jump()
@@ -81,7 +89,26 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstacles"))
         {
-            SceneManager.LoadScene("Main");
+            HP--;                                              // 체력이 0이되면 End씬 로드
+            if(HP == 0)
+            {
+                SceneManager.LoadScene("End");
+            }
+        }
+
+
+
+        if (collision.gameObject.CompareTag("ObstaclesMoveChange"))
+        {
+            HP--;                                              // 체력이 0이되면 End씬 로드
+            if (HP == 0)
+            {
+                SceneManager.LoadScene("End");
+            }
+
+            touch = true;
+            time = 0;
+           
         }
 
     }

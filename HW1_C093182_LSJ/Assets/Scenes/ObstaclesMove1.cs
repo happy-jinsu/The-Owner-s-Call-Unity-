@@ -38,4 +38,5 @@ public class ObstaclesMove1 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, startPoint, speed);
         }
     }
+
 }
