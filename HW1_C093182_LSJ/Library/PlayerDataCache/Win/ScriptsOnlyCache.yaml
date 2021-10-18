@@ -837,5 +837,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Main.unity
   - Assets/Scenes/Win.unity
   - Assets/Scenes/End.unity
-  playerPath: "C:/Users/82106/Desktop/2021-2/\uAC8C\uC784\uC5D4\uC9C4\uC2E4\uC2B5/Unity/The
-    Owner's Call.exe"
+  playerPath: C:/Users/82106/Desktop/The Owner's Call.exe
