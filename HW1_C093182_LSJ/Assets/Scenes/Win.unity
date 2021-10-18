@@ -1091,8 +1091,8 @@ GameObject:
   - component: {fileID: 1727134337}
   - component: {fileID: 1727134341}
   - component: {fileID: 1727134340}
-  - component: {fileID: 1727134339}
   - component: {fileID: 1727134338}
+  - component: {fileID: 1727134339}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1727134336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45f36230519ecbd47a3d2a7fdd44865d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ce52557a02f9f14c878a07e103df501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1727134340
@@ -1200,7 +1200,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1727134339}
-        m_MethodName: restart
+        m_MethodName: goTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scenes\Script\Exit.cs" />
     <Compile Include="Assets\Scenes\Script\FollowCam.cs" />
+    <Compile Include="Assets\Scenes\Script\GoTitle.cs" />
     <Compile Include="Assets\Scenes\Script\Goplay.cs" />
     <Compile Include="Assets\Scenes\Script\HP.cs" />
     <Compile Include="Assets\Scenes\Script\ObstaclesJump.cs" />
