@@ -1,2 +1,5 @@
-# Unity
-🕹게임엔진실습 과제&amp; 프로젝트🕹
+# Game [ The Owner's Call - Unity]
+🕹게임 프로젝트🕹
+🕹Unity pro로 제작🕹
+🕹간단한 점프 게임🕹
+
